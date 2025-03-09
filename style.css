@@ -1,0 +1,258 @@
+*{
+    padding: 0;
+    margin: 0;
+    caret-color: transparent;
+}
+
+input:focus{
+    caret-color: black;
+}
+
+body{
+        /* overflow-x: hidden; */
+        font-family: "Poppins", sans-serif;
+}
+
+.header{
+    display: flex;
+    background-color: #3498DB;
+    color: #F4F4F4;
+    height: 100px;
+    width: 100%;
+    justify-content:space-between;
+    align-items: center;
+    box-shadow: 2px 20px 20px gray;
+}
+
+.header h1{
+    padding-left: 20px ;
+}
+.header i{
+    padding-right: 20px;
+}
+#logout:hover{
+    cursor: pointer;
+}
+
+.searchbar{
+    margin: 25px;
+    margin-top: 25px;
+    border: none;
+}
+
+.searchoption{
+    margin: 20px;
+    margin-top: 20px;   
+}
+
+
+.list-index{
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    border: 2px black;
+    border-style: groove;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.list{
+    display:flex;
+    flex-wrap: wrap;
+
+}
+
+.list-index p{
+    flex-basis: 12%;
+    border: solid 1px black;
+    background-color: rgba(129, 194, 247, 0.584);
+}
+
+
+
+.one{
+    flex-grow: 1;
+}
+.ones{
+    flex-grow: 1;
+}
+
+.list-entry{
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.list-entry p{
+    flex-basis: 12%;
+    border: solid 1px black;
+}
+
+.add{
+    position: fixed;
+    right: 20px;
+    bottom: 120px;
+    text-align: center;
+    font-size: 50px;
+    
+}
+
+.add button{
+    border: none;
+    background-color: transparent;
+}
+
+.overlay{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.9;
+    z-index: 1;
+    display: none;
+}
+
+.Add-Train{
+    padding: 10px;
+    padding-top: 15px;
+    height: 400px;
+    width: 400px;
+    position: fixed;
+    left: 40%;
+    top: 22%;
+    column-gap: 50px;
+    border-radius: 40px;
+    background-color: white;
+    text-align: center;
+    z-index: 3;
+    
+}
+
+.Add-Train input{
+    height: 20px;
+    flex-basis: 100%;
+    margin: 10px;
+    margin-right:25px ;
+    margin-top: 15px;
+    width: 250px;
+    background-color: transparent;
+    border: none;
+    border-bottom: slategray groove 2px;
+    color: black;
+}
+
+.Add-Train input:focus{
+    outline: none;
+}
+.Add-Train input::placeholder{
+    color: #3498DB;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.buttons button{
+    width: 100px;
+    border-radius: 10px;
+    color: white;
+    background-color: #3498DB;
+}
+button{
+    cursor: pointer;
+}
+@media screen and (max-width:700px) {
+    .Add-Train{
+        left: 20%;
+    }    
+
+
+}
+
+.avail-seat:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.footer{
+    height: 100px;
+    width: 100%;
+    background-color: slategrey;
+    color: #F4F4F4;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    /* padding: 20px; */
+    padding-left: 50px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    vertical-align: middle;
+}
+
+.footer i{
+    padding-top: 10px;
+}
+
+#book-ticket{
+    height: 50px;
+    width: 300px;
+    background-color: grey;
+    position: fixed;
+    left: 38%;
+    top: 40%;
+    display: none;
+    z-index: 3;
+}
+
+
+#overlay2{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.95;
+    z-index: 1;
+    display: none;
+}
+
+#tktform{
+    height: 50px;
+    width: 300px;
+    background-color: steelblue;
+    position: fixed;
+    left: 38%;
+    top: 40%;
+    padding-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+
+#tktform input:focus{
+    outline: none;
+}
+
+#success{
+    position: fixed;
+    height: 150px;
+    width: 300px;
+    left: 40%;
+    top: 30%;
+    z-index: 4;
+    background-color:  #708090;
+    text-align: center;
+    display:none;
+}
+
+#success h2{
+    margin-top: 10px;
+    padding-top: 20px;
+    color: #F4F4F4;
+}
+

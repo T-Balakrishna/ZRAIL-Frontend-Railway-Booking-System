@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zrail Booking page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+       <div class="overlay">
+        <button style="font-size: xx-large;position: fixed; border: none; background-color: transparent; right: 20px; top: 20px;" onclick="closeoverlay(event)"><i class="fa-solid fa-circle-xmark" style="color: #727977;"></i></button>
+        <div class="Add-Train">
+            <h1 style="color: #3498DB;">Train Details</h1>
+            <form id="form" action="" onsubmit="return false">
+                <input required type="text" placeholder="Train Name" id="newname" >
+                <input required type="text" placeholder="Train Number" min="100000" max="999999" minlength="6" maxlength="6" id="newnumber">
+                <input required type="text" placeholder="From station" id="newfrom">
+                <input required type="text" placeholder="To station" id="newto">
+                <input required type="number" placeholder="Platform Number" id="newplat">
+                <input required type="number" placeholder="Available Seats" id="newavail">
+                <div class="buttons">
+                    <button type="reset">Reset</button>
+                    <button type="submit" onclick="addtrain()">Submit</button>
+                </div>
+            </form>
+        </div>
+       </div>
+
+
+        <div class="header">
+            <h1 style="font-size: 40px;">ZRAIL</h1>
+            <i style="font-size: xx-large;" id="logout" class="fa-solid fa-right-from-bracket" onclick="logout()"></i>
+        </div>
+
+        <div class="searchbar">
+            <p style="display: inline;padding-right: 5px;">Search By:</p>
+            <select name="searchby" id="searchby" style="margin: 25px;">
+                <option value="none" ></option>
+                <option value="name" >Train Name</option>
+                <option value="number" >Train Number</option>
+                <option value="from">From Station</option>
+                <option value="to">To Station</option>
+            </select>
+            <input class="searchoption" onkeyup="searches(event)" style="display: none;" id="Train-name" type="text" placeholder="Train Name">
+            <input class="searchoption" onkeyup="searches(event)" style="display: none;" id="Train-no" type="number" placeholder="Train No.">
+            <input class="searchoption" onkeyup="searches(event)" style="display: none;" id="From" type="text" placeholder="From station">
+            <input class="searchoption" onkeyup="searches(event)" style="display: none;" id="To" type="text" placeholder="To station">
+        </div>
+
+    <div class="list">
+        <div class="list-index">
+            <p class="ones">Train Name</p>
+            <p>Train Number</p>
+            <p>From Station</p>
+            <p>To Station</p>
+            <p>Platform</p>
+            <p>Availability</p>
+            <p>Action</p>
+        </div>
+
+        <div class="list-entry">
+            <p class="one">Chennai Express</p>
+            <p class="two">123456</p>
+            <p class="three">chennai</p>
+            <p class="four">tirunelveli</p>
+            <p>5</p>
+            <p class="avail-seat"   >156</p>
+            <p><button class="del-train" onclick="deltrain(event)">Delete</button></p>
+        </div>
+
+        <div class="list-entry">
+            <p class="one">Mumbai Express</p>
+            <p class="two">789451</p>
+            <p class="three">Mumbai</p>
+            <p class="four">Chennai</p>
+            <p>6</p>
+            <p class="avail-seat" >241</p>
+            <p><button class="del-train" onclick="deltrain(event)">Delete</button></p>
+        </div>
+        
+        <div class="list-entry">
+            <p class="one">Vaigai Express</p>
+            <p class="two">451235</p>
+            <p class="three">Madurai</p>
+            <p class="four">Chennai</p>
+            <p>1</p>
+            <p class="avail-seat" >46</p>
+            <p><button class="del-train" onclick="deltrain(event)">Delete</button></p>
+        </div>
+        
+        <div class="list-entry">
+            <p class="one">Nellai Express</p>
+            <p class="two">563214</p>
+            <p class="three">Tirunelveli</p>
+            <p class="four">Chennai</p>
+            <p>4</p>
+            <p class="avail-seat" >98</p>
+            <p><button class="del-train" onclick="deltrain(event)">Delete</button></p>
+        </div>
+
+        
+        
+
+    </div>
+
+    
+
+    <div class="add"><button onclick="showoverlay(event)" id="add-button" style="font-size: xx-large;"><i class="fa-solid fa-circle-plus" style="color: #3498db; font-size: 35px;"></i></button></div>
+
+    <div class="footer">
+        <i style="font-size: 20px;" class="fa-solid fa-envelope" style="color: #f4f4f4;"></i><p style="display: inline-block;padding-left: 10px; position: relative; bottom: 2.5px;">zrail@gmail.com</p><br>
+        <i class="fa-solid fa-phone" style="color: #f4f4f4;"></i><p style="display: inline-block;padding-left: 10px; position: relative; ">+123 456 7890</p><br>
+        <i class="fa-brands fa-x-twitter"  style="color: #f4f4f4;"></i><p style="display: inline-block;padding-left: 10px; position: relative; ">@zrail_booking</p><br>
+    </div>
+
+    
+    <!-- <div id="book-ticket"> -->
+
+        <div id="overlay2">
+
+            <button style="font-size: xx-large;position: fixed; border: none; background-color: transparent; right: 20px; top: 20px;" onclick="closeoverlay2(event)"><i class="fa-solid fa-circle-xmark" style="color: #727977;"></i></button>
+        
+            <form action="" id="tktform" onsubmit="return false">
+                <i id="sub-tkt" class="fa-solid fa-minus" style="color: #f4f4f4;" onclick="subtkt()"></i>
+                <input id="tkt-need" type="number" placeholder="Number of Tickets">
+                <i  id="add-tkt" class="fa-solid fa-plus" style="color: #f4f4f4;" onclick="addtkt()"></i>
+                <button style="border-radius: 5px; width: 60px;height: 20px;" onclick="cnfrm(event)">Confirm</button>
+            </form>
+
+        </div>
+    <!-- </div>     -->
+
+    <div id="success"><h2>Tickets booked suucessfuly</h2></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
