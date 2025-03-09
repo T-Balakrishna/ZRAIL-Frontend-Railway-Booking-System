@@ -12,10 +12,14 @@ The Login page has two mode of Logins
 Login Credentials
 
 1.Admin
+
 Username: admin
+
 Pass : Admin@123
 
 2.User
+
 Username: user
+
 Pass : User@123
 
